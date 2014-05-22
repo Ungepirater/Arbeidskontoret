@@ -18,6 +18,12 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var appData = {
+    title: 'Arbeidskontoret',
+    projects: [],
+    stillinger: [],
+    brukere: []
+};
 app.use('/', function(req, res) {
   res.render('index', { title: 'Arbeidskontoret' });
 });
@@ -28,6 +34,9 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
+
+
 
 /// error handlers
 
