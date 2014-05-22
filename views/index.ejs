@@ -1,11 +1,150 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+	<title><%= title %></title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<style type="text/css">
+		/* Move down content because we have a fixed navbar that is 50px tall */
+		body {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+	</style>
+
+	<!-- Just for debugging purposes. Don't actually copy this line! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
   </head>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+  	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+  				<a class="navbar-brand" href="#"><%= title %></a>
+  			</div>
+  			<div class="navbar-collapse collapse">
+  				<ul class="nav navbar-nav">
+  					<li><a href="#">Prosjekter</a></li>
+  					<li><a href="#">Ledige stillinger</a></li>
+  					<li><a href="#">Brukere</a></li>
+  				</ul>
+  				<ul class="nav navbar-nav navbar-right">
+  					<li><a href="#">Logg inn</a></li>
+  					<li><a href="#">Om Arbeidskontoret</a></li>
+  				</ul>
+  			</div><!--/.navbar-collapse -->
+  		</div>
+  	</div>
+
+  	<!-- Main jumbotron for a primary marketing message or call to action -->
+  	<div class="jumbotron">
+  		<div class="container">
+  			<h1>Velkommen til Arbeidskontoret!</h1>
+  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  				consequat.
+  			</p>
+  			<div class="row">
+  				<div class="col-md-3">
+  					<a class="btn btn-danger btn-lg btn-block" role="button">Prosjekter &raquo;</a>
+  				</div>
+  				<div class="col-md-3">
+  					<a class="btn btn-success btn-lg btn-block" role="button">Finn en stilling &raquo;</a>
+  				</div>
+  				<div class="col-md-3">
+  					<a class="btn btn-warning btn-lg btn-block" role="button">Piratpartiets nettside &raquo;</a>
+  				</div>
+  				<div class="col-md-3">
+  					<a class="btn btn-info btn-lg btn-block" role="button">Les mer om Arbeidskontoret &raquo;</a>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="container">
+  		<!-- Example row of columns -->
+  		<div class="row">
+  			<div class="col-md-4">
+  				<div class="panel panel-default">
+  					<!-- Default panel contents -->
+  					<div class="panel-heading">Sist oppdaterte prosjekter</div>
+  					<!-- List group -->
+  					<ul class="list-group">
+  						<li class="list-group-item">Cras justo odio</li>
+  						<li class="list-group-item">Dapibus ac facilisis in</li>
+  						<li class="list-group-item">Morbi leo risus</li>
+  						<li class="list-group-item">Porta ac consectetur ac</li>
+  						<li class="list-group-item">Vestibulum at eros</li>
+  					</ul>
+  				</div>
+  			</div>
+  			<div class="col-md-4">
+  				<div class="panel panel-default">
+  					<!-- Default panel contents -->
+  					<div class="panel-heading">Ledige stillinger</div>
+  					<!-- List group -->
+  					<ul class="list-group">
+  						<li class="list-group-item">Cras justo odio</li>
+  						<li class="list-group-item">Dapibus ac facilisis in</li>
+  						<li class="list-group-item">Morbi leo risus</li>
+  						<li class="list-group-item">Porta ac consectetur ac</li>
+  						<li class="list-group-item">Vestibulum at eros</li>
+  					</ul>
+  				</div>
+  			</div>
+  			<div class="col-md-4">
+  				<div class="panel panel-default">
+  					<!-- Default panel contents -->
+  					<div class="panel-heading">Mest aktive brukere</div>
+  					<!-- List group -->
+  					<ul class="list-group">
+  						<li class="list-group-item">Fredrik Mundt</li>
+  						<li class="list-group-item">Dapibus ac facilisis in</li>
+  						<li class="list-group-item">Morbi leo risus</li>
+  						<li class="list-group-item">Porta ac consectetur ac</li>
+  						<li class="list-group-item">Vestibulum at eros</li>
+  					</ul>
+  				</div>
+  			</div>
+
+  		</div>
+
+  		<hr>
+
+  		<footer>
+  			<p>&copy; Ungepirater 2014</p>
+  		</footer>
+  	</div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
 </html>
