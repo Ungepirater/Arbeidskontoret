@@ -47,6 +47,10 @@ var projectSchema = mongoose.Schema({
         type: String,
         default: "Long Description not set."
     },
+    header_img: {
+        type: String,
+        default: ""
+    }
 })
 var Project = mongoose.model('Project', projectSchema);
 
@@ -99,10 +103,13 @@ var appData = {
     stillinger: [],
     brukere: []
 };
-app.use('/', function(req, res) {
+app.get('/', function(req, res) {
   res.render('index', { title: 'Arbeidskontoret' });
 });
 
+app.get('/project_demo', function(req, res) {
+  res.render('project', { title: 'Arbeidskontoret' });
+});
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
