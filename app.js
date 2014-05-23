@@ -1,9 +1,76 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/Arbeidskontoret');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  console.log("Connected DB");
+});
+
+var projectSchema = mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    start_date: {
+        type: Date,
+        default: Date.now,
+        required: true
+    },
+    end_date: {
+        type: Date,
+        default: Date.now,
+        required: true
+    },
+    admins: [
+    {
+        admin_id: {
+            type: String,
+            required: true
+        },
+        date_added: {
+            type: Date,default: Date.now,
+            required: true
+        },
+        super_admin: {
+            type: Boolean,
+            default: false,
+            required: true
+        }
+    }
+    ],
+    short_description: {
+        type: String,
+        default: "Short Description not set."
+    },
+    long_description: {
+        type: String,
+        default: "Long Description not set."
+    },
+})
+var Project = mongoose.model('Project', projectSchema);
+
+//var fluffy = new Kitten({ name: 'fluffy' });
+
+/*fluffy.save(function (err, fluffy) {
+  if (err) return console.error(err);
+  //fluffy.speak();
+});*/
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+/**
+* Express middelware
+**/
+var cookieParser = require('cookie-parser');
+var session = require('cookie-session');
+
+
 
 var app = express();
 
@@ -16,6 +83,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+/**
+* Add session support
+**/
+app.use(cookieParser('F@mTheGeeK'));
+app.use(session({
+  keys: ['key1', 'key2']
+}))
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 var appData = {
